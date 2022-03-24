@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MyQueueTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-03-24T19:32:37" hostname="LAPTOP-Q5C8LV4E" time="0.041">
+  <properties/>
+  <testcase name="element()" classname="MyQueueTest" time="0.034"/>
+  <testcase name="remove()" classname="MyQueueTest" time="0.001"/>
+  <testcase name="peek()" classname="MyQueueTest" time="0.0"/>
+  <testcase name="poll()" classname="MyQueueTest" time="0.0"/>
+  <testcase name="size()" classname="MyQueueTest" time="0.0"/>
+  <testcase name="offer()" classname="MyQueueTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

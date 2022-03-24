@@ -6,31 +6,33 @@ class MyQueue<T> {
     fun peek(): T? {
         if (currentSize == 0)
             return null
-        return queue[currentSize - 1] as? T
+        return queue[0] as? T
     }
 
     fun poll(): T? {
         if (currentSize == 0)
             return null
         --currentSize
+
+        val result = queue[0]
+        for (i in 0 until currentSize)
+            queue[i] = queue[i + 1]
+
         if (currentSize * 4 <= queue.size && currentSize >= INIT_SIZE)
             resize(currentSize)
-        return queue[currentSize] as? T
+        return result as? T
     }
 
     fun element(): T? {
         if (currentSize == 0)
             throw Exception("NoSuchElementException")
-        return queue[currentSize - 1] as? T
+        return queue[0] as? T
     }
 
     fun remove(): T? {
         if (currentSize == 0)
             throw Exception("NoSuchElementException")
-        --currentSize
-        if (currentSize * 4 <= queue.size && currentSize >= INIT_SIZE)
-            resize(currentSize)
-        return queue[currentSize] as? T
+        return poll()
     }
 
     fun offer(elem: Any): Boolean{

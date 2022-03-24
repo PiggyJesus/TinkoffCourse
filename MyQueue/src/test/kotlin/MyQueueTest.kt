@@ -52,4 +52,33 @@ internal class MyQueueTest {
         assertEquals(true, queue.offer(123))
         assertEquals(123, queue.peek())
     }
+
+
+    @Test
+    fun combinedTest1() {
+        var queue = MyQueue<Int>()
+        queue.offer(1)
+        queue.offer(2)
+        queue.offer(3)
+        assertAll(
+            { assertEquals(1, queue.poll()) },
+            { assertEquals(2, queue.poll()) },
+            { assertEquals(3, queue.poll()) },
+            { assertEquals(0, queue.size()) }
+        )
+    }
+
+    @Test
+    fun combinedTest2() {
+        var queue = MyQueue<Int>()
+        queue.offer(1)
+        queue.offer(2)
+        queue.offer(3)
+        assertAll(
+            { assertEquals(1, queue.peek()) },
+            { assertEquals(1, queue.peek()) },
+            { assertEquals(1, queue.peek()) },
+            { assertEquals(3, queue.size()) }
+        )
+    }
 }
